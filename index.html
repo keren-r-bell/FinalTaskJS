@@ -29,9 +29,11 @@
             <label for="nameField">Name your rabbit: *</label>
             <input type="text" id="nameField" required>
             <br>
+
             <label for="shirtField">What's on the shirt? *</label>
             <input type="text" id="shirtField" required>
             <br>
+
             <label for="rabbitColor">What's the rabbit color? *</label>
             <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" required>
             <label for="rabbitColorRed">Red</label>
@@ -41,6 +43,19 @@
             <label for="rabbitColorGreen">Green</label>
             <input type="radio" id="rabbitColorYellow" name="rabbitColor" value="yellow" required>
             <label for="rabbitColorYellow">Yellow</label>
+            <br>
+            <label>Choose accessories for you rabbit:</label>
+            <br>
+            <input type="checkbox" id="topHat" name="accessories" value="topHat">
+            <label for="topHat">Top Hat</label>
+            <input type="checkbox" id="cuteCap" name="accessories" value="cuteCap">
+            <label for="cuteCap">Cute Cap</label>
+            <input type="checkbox" id="bowTie" name="accessories" value="bowTie">
+            <label for="bowTie">Bow Tie</label>
+            <input type="checkbox" id="walkingCane" name="accessories" value="walkingCane">
+            <label for="walkingCane">Walking Cane</label>
+            <input type="checkbox" id="handBag" name="accessories" value="handBag">
+            <label for="handBag">Hand Bag</label>
             <br>
             <button onclick="myFunc()">Build my Hare!</button>
         </form>
