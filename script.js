@@ -48,7 +48,11 @@ function setUp() {
 function nameUpdate(event) {
     const nameDisplay = document.getElementById('rabbitName');
     name = event.target.value;
-    nameDisplay.innerHTML = name;
+    if (name != '') {
+        nameDisplay.innerHTML = name;
+    } else {
+        nameDisplay.innerHTML = "<span style='color: #0005'>Your rabbit's name...</span>"
+    }
     isButtonReady();
 }
 function radioUpdate(event) {
