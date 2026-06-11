@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>תבנה את הארנב שלך</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
@@ -17,6 +17,7 @@
 <body>
     <header>
         <h1>Build-a-Hare</h1>
+        <p>תבנו את ארנב החלומות שלכם, בחרו לו צבע, לבוש ותנו לו שם</p>
     </header>
     <main>
         <div id="outputRabbit">
@@ -25,11 +26,21 @@
             <p>👖</p>
         </div>
         <form id="settingsPane">
-            <label for="nameField">Name your rabbit:</label>
-            <input type="text" id="nameField">
+            <label for="nameField">Name your rabbit: *</label>
+            <input type="text" id="nameField" required>
             <br>
-            <label for="shirtField">What's on the shirt?</label>
-            <input type="number" id="shirtField">
+            <label for="shirtField">What's on the shirt? *</label>
+            <input type="text" id="shirtField" required>
+            <br>
+            <label for="rabbitColor">What's the rabbit color? *</label>
+            <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" required>
+            <label for="rabbitColorRed">Red</label>
+            <input type="radio" id="rabbitColorBlue" name="rabbitColor" value="blue" required>
+            <label for="rabbitColorBlue">Blue</label>
+            <input type="radio" id="rabbitColorGreen" name="rabbitColor" value="green" required>
+            <label for="rabbitColorGreen">Green</label>
+            <input type="radio" id="rabbitColorYellow" name="rabbitColor" value="yellow" required>
+            <label for="rabbitColorYellow">Yellow</label>
             <br>
             <button onclick="myFunc()">Build my Hare!</button>
         </form>
