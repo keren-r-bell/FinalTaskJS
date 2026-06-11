@@ -1,11 +1,33 @@
+let color = "";
 
 function buildRabbit() {
     const name = document.getElementById('nameField').value;
+
+    let accessories = [];
+
+    if (document.getElementById('topHat').checked) {
+        accessories.push("Top Hat");
+    }
+    if (document.getElementById('cuteCap').checked) {
+        accessories.push("Cute Cap");
+    }
+    if (document.getElementById('bowTie').checked) {
+        accessories.push("Bow Tie");
+    }
+    if (document.getElementById('walkingCane').checked) {
+        accessories.push("Walking Cane");
+    }
+    if (document.getElementById('handBag').checked) {
+        accessories.push("Hand Bag");
+    }
+
     let results = document.getElementById('results');
+    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>, will arrive in <strong>" + color + "</strong> color, and with the following accessories: ";
 
-    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>, will arrive"
+    for (let i = 0; i < accessories.length; i++) {
+        results.innerHTML += "<br>" + accessories[i];
+    }
 }
-
 
 function setUp() {
     const nameField = document.getElementById('nameField')
@@ -34,4 +56,6 @@ function checkUpdate(event) {
 function radioUpdate(event) {
     const rabbitPreview = document.getElementById('mainRabbit');
     rabbitPreview.className = event.target.value;
+
+    color = event.target.value;
 }
