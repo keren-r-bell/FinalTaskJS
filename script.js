@@ -3,7 +3,7 @@ function buildRabbit() {
     const name = document.getElementById('nameField').value;
     let results = document.getElementById('results');
 
-    results.innerHTML = "Your new rabbit, " + name + " , will arrive"
+    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>, will arrive"
 }
 
 
