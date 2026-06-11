@@ -28,49 +28,50 @@
                 <img src="images/accessory2.png" class="disabled" alt="" id="cuteCapImg">
                 <img src="images/accessory3.png" class="disabled" alt="" id="bowTieImg">
                 <img src="images/accessory4.png" class="disabled" alt="" id="walkingCaneImg">
-                <img src="images/accessory5.png" class="disabled" alt="" id="handBagImg">
+                <img src="images/accessory5.png" class="disabled" alt="" id="handbagImg">
             </div>
         </div>
         <div id="settingsPane">
-        <form>
-            <fieldset>
-                <legend>Rabbit</legend>
+            <form>
+                <fieldset>
+                    <legend>Rabbit</legend>
 
-                <label for="nameField">* Name: <input type="text" id="nameField" required></label><br>
+                    <label for="nameField">* Name: <input type="text" id="nameField" required></label><br>
+                    <br>
+                    <label for="rabbitColor">* What's its color?</label>
+                    <br>
+                    <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" required>
+                    <label for="rabbitColorRed">Red</label><br>
+                    <input type="radio" id="rabbitColorBlue" name="rabbitColor" value="blue" required>
+                    <label for="rabbitColorBlue">Blue</label><br>
+                    <input type="radio" id="rabbitColorGreen" name="rabbitColor" value="green" required>
+                    <label for="rabbitColorGreen">Green</label><br>
+                    <input type="radio" id="rabbitColorYellow" name="rabbitColor" value="yellow" required>
+                    <label for="rabbitColorYellow">Yellow</label><br>
+                </fieldset>
                 <br>
-                <label for="rabbitColor">* What's its color?</label>
-                <br>
-                <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" required>
-                <label for="rabbitColorRed">Red</label><br>
-                <input type="radio" id="rabbitColorBlue" name="rabbitColor" value="blue" required>
-                <label for="rabbitColorBlue">Blue</label><br>
-                <input type="radio" id="rabbitColorGreen" name="rabbitColor" value="green" required>
-                <label for="rabbitColorGreen">Green</label><br>
-                <input type="radio" id="rabbitColorYellow" name="rabbitColor" value="yellow" required>
-                <label for="rabbitColorYellow">Yellow</label><br>
-            </fieldset>
+                <fieldset>
+                    <legend>Extras</legend>
+                    <label>Choose accessories for your rabbit:</label>
+                    <br>
+                    <input type="checkbox" id="topHat" name="accessories" value="Top Hat">
+                    <label for="topHat">Top Hat</label><br>
+                    <input type="checkbox" id="cuteCap" name="accessories" value="Cute Cap">
+                    <label for="cuteCap">Cute Cap</label><br>
+                    <input type="checkbox" id="bowTie" name="accessories" value="Bow Tie">
+                    <label for="bowTie">Bow Tie</label><br>
+                    <input type="checkbox" id="walkingCane" name="accessories" value="Walking Cane">
+                    <label for="walkingCane">Walking Cane</label><br>
+                    <input type="checkbox" id="handbag" name="accessories" value="Handbag">
+                    <label for="handbag">Handbag</label><br>
+                </fieldset>
+            </form>
             <br>
-            <fieldset>
-                <legend>Extras</legend>
-                <label>Choose accessories for your rabbit:</label>
-                <br>
-                <input type="checkbox" id="topHat" name="accessories" value="topHat">
-                <label for="topHat">Top Hat</label><br>
-                <input type="checkbox" id="cuteCap" name="accessories" value="cuteCap">
-                <label for="cuteCap">Cute Cap</label><br>
-                <input type="checkbox" id="bowTie" name="accessories" value="bowTie">
-                <label for="bowTie">Bow Tie</label><br>
-                <input type="checkbox" id="walkingCane" name="accessories" value="walkingCane">
-                <label for="walkingCane">Walking Cane</label><br>
-                <input type="checkbox" id="handBag" name="accessories" value="handBag">
-                <label for="handBag">Hand Bag</label><br>
-            </fieldset>
-        </form>
-        <br>
-        <button onclick="buildRabbit()">Build my Hare!</button>
-        <p id="results"></p>
+            <button id="submitButton" onclick="buildRabbit()" disabled=true>Build my Hare!</button>
         </div>
     </main>
+
+    <p id="results">What the actual fuck is this</p>
 </body>
 
 </html>

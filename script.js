@@ -1,31 +1,33 @@
 let color = "";
+let name = "";
 
 function buildRabbit() {
-    const name = document.getElementById('nameField').value;
-
     let accessories = [];
-
-    if (document.getElementById('topHat').checked) {
-        accessories.push("Top Hat");
-    }
-    if (document.getElementById('cuteCap').checked) {
-        accessories.push("Cute Cap");
-    }
-    if (document.getElementById('bowTie').checked) {
-        accessories.push("Bow Tie");
-    }
-    if (document.getElementById('walkingCane').checked) {
-        accessories.push("Walking Cane");
-    }
-    if (document.getElementById('handBag').checked) {
-        accessories.push("Hand Bag");
+    const checkboxes = document.getElementsByName('accessories')
+    for (let i=0; i < checkboxes.length; i++ ) {
+        if (checkboxes[i].checked) {
+            console.log(checkboxes[i].value)
+            accessories[accessories.length] = checkboxes[i].value;
+        }
     }
 
     let results = document.getElementById('results');
-    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>, will arrive in <strong>" + color + "</strong> color, and with the following accessories: ";
 
-    for (let i = 0; i < accessories.length; i++) {
-        results.innerHTML += "<br>" + accessories[i];
+    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>, will be colored <strong style='text-shadow: 0 1px 4px #0008; color: " + color + "'>" + color + "</strong>";
+    
+    if (accessories.length > 0) {
+        results.innerHTML += ", and will be bundled with the following extras: ";
+        let accList = "";
+        for (let i = 0; i < accessories.length; i++) {
+            accList += accessories[i] 
+            if (i < (accessories.length - 1)) {
+                accList += ", ";
+            }
+        }
+        results.innerHTML += accList + ".";
+
+    } else {
+        results.innerHTML += " and feature no extras.";
     }
 }
 
@@ -36,26 +38,42 @@ function setUp() {
     document.querySelectorAll('input[name="rabbitColor"]').forEach(radio => {
         radio.addEventListener('change', radioUpdate);
     });
-    document.querySelectorAll('input[name="accessories"]').forEach(checkbox => {
-        checkbox.addEventListener('change', checkUpdate);
-    });
+
+    const checkboxes = document.getElementsByName('accessories')
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('change', checkboxUpdate);
+    }
 }
 
 function nameUpdate(event) {
     const nameDisplay = document.getElementById('rabbitName');
-    nameDisplay.innerHTML = event.target.value;
-}
-function checkUpdate(event) {
-    const matchingAccessory = document.getElementById(event.target.id + 'Img')
-    if (matchingAccessory.className = 'disabled') {
-        matchingAccessory.className = 'enabled'
-    } else {
-        matchingAccessory.className = 'disabled'
-    }
+    name = event.target.value;
+    nameDisplay.innerHTML = name;
+    isButtonReady();
 }
 function radioUpdate(event) {
     const rabbitPreview = document.getElementById('mainRabbit');
     rabbitPreview.className = event.target.value;
 
     color = event.target.value;
+    isButtonReady();
+}
+function checkboxUpdate(event) {
+    const matchingAccessory = document.getElementById(event.target.id + 'Img')
+    console.log(matchingAccessory)
+    console.log(event.target.checked)
+    if (event.target.checked == true) {
+        matchingAccessory.className = 'enabled'
+    } else {
+        matchingAccessory.className = 'disabled'
+    }
+}
+
+function isButtonReady() {
+    const readyButton = document.getElementById('submitButton');
+    if (name.length > 0 && color.length > 0) {
+        readyButton.disabled = false;
+    } else {
+        readyButton.disabled = true;
+    }
 }
