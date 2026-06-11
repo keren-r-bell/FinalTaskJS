@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>תבנה את הארנב שלך</title>
+    <title>Build-a-Hare</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
@@ -17,47 +17,56 @@
 <body>
     <header>
         <h1>Build-a-Hare</h1>
-        <p>תבנו את ארנב החלומות שלכם, בחרו לו צבע, לבוש ותנו לו שם</p>
+        <p>Design your dream rabbit friend! Choose a color, name and accessories!</p>
     </header>
     <main>
         <div id="outputRabbit">
-            <p>🐰</p>
-            <p>👕</p>
-            <p>👖</p>
+            <img src="images/rabbit.png" id="mainRabbit" alt="An illustration of your new pet rabbit.">
+            <div id="accessoryBox">
+                <img src="images/accessory1.png" class="disabled" alt="">
+                <img src="images/accessory2.png" class="disabled" alt="">
+                <img src="images/accessory3.png" class="disabled" alt="">
+                <img src="images/accessory4.png" class="disabled" alt="">
+                <img src="images/accessory5.png" class="disabled" alt="">
+            </div>
         </div>
         <form id="settingsPane">
-            <label for="nameField">Name your rabbit: *</label>
-            <input type="text" id="nameField" required>
-            <br>
+            <fieldset>
+                <legend>Rabbit</legend>
 
-            <label for="shirtField">What's on the shirt? *</label>
-            <input type="text" id="shirtField" required>
+                <label for="nameField">* Name: <input type="text" id="nameField" required></label><br>
+                <br>
+                <label for="rabbitColor">* What's its color?</label>
+                <br>
+                <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" checked required>
+                <label for="rabbitColorRed">Red</label><br>
+                <input type="radio" id="rabbitColorBlue" name="rabbitColor" value="blue" required>
+                <label for="rabbitColorBlue">Blue</label><br>
+                <input type="radio" id="rabbitColorGreen" name="rabbitColor" value="green" required>
+                <label for="rabbitColorGreen">Green</label><br>
+                <input type="radio" id="rabbitColorYellow" name="rabbitColor" value="yellow" required>
+                <label for="rabbitColorYellow">Yellow</label><br>
+            </fieldset>
             <br>
-
-            <label for="rabbitColor">What's the rabbit color? *</label>
-            <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" required>
-            <label for="rabbitColorRed">Red</label>
-            <input type="radio" id="rabbitColorBlue" name="rabbitColor" value="blue" required>
-            <label for="rabbitColorBlue">Blue</label>
-            <input type="radio" id="rabbitColorGreen" name="rabbitColor" value="green" required>
-            <label for="rabbitColorGreen">Green</label>
-            <input type="radio" id="rabbitColorYellow" name="rabbitColor" value="yellow" required>
-            <label for="rabbitColorYellow">Yellow</label>
-            <br>
-            <label>Choose accessories for you rabbit:</label>
-            <br>
-            <input type="checkbox" id="topHat" name="accessories" value="topHat">
-            <label for="topHat">Top Hat</label>
-            <input type="checkbox" id="cuteCap" name="accessories" value="cuteCap">
-            <label for="cuteCap">Cute Cap</label>
-            <input type="checkbox" id="bowTie" name="accessories" value="bowTie">
-            <label for="bowTie">Bow Tie</label>
-            <input type="checkbox" id="walkingCane" name="accessories" value="walkingCane">
-            <label for="walkingCane">Walking Cane</label>
-            <input type="checkbox" id="handBag" name="accessories" value="handBag">
-            <label for="handBag">Hand Bag</label>
+            <fieldset>
+                <legend>Extras</legend>
+                <label>Choose accessories for your rabbit:</label>
+                <br>
+                <input type="checkbox" id="topHat" name="accessories" value="topHat">
+                <label for="topHat">Top Hat</label><br>
+                <input type="checkbox" id="cuteCap" name="accessories" value="cuteCap">
+                <label for="cuteCap">Cute Cap</label><br>
+                <input type="checkbox" id="bowTie" name="accessories" value="bowTie">
+                <label for="bowTie">Bow Tie</label><br>
+                <input type="checkbox" id="walkingCane" name="accessories" value="walkingCane">
+                <label for="walkingCane">Walking Cane</label><br>
+                <input type="checkbox" id="handBag" name="accessories" value="handBag">
+                <label for="handBag">Hand Bag</label><br>
+            </fieldset>
             <br>
             <button onclick="myFunc()">Build my Hare!</button>
+
+            <p id="results"></p>
         </form>
     </main>
 </body>

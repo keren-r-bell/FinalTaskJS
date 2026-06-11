@@ -8,10 +8,10 @@ main {
 
     #outputRabbit {
         width:  320px;
-        height: 320px;
         background-color: #dddddd;
         box-shadow: 0 6px 9px #0004;
         border-radius: 24px;
+        padding: 16px;
         margin: 8px;
 
         display: flex;
@@ -19,17 +19,44 @@ main {
         align-items: center;
         justify-content: center;
 
-        p {
-            display: block;
-            text-shadow: 0 4px 9px;
+        #accessoryBox img {
+            width: 94px;
         }
     }
+    img.enabled {
+        opacity: 40%;
+    }
+    img.disabled {
+        opacity: 40%;
+    }
+
+    #mainRabbit {
+        width: 300px; 
+    }
+    .blue {
+        filter: hue-rotate(200deg); 
+    }
+    .green {
+        filter: hue-rotate(110deg); 
+    }
+    .yellow {
+        filter: hue-rotate(50deg); 
+    }
+    .red {
+        filter: hue-rotate(0deg); 
+    }
+
+
 
     #settingsPane {
         background-color: #fff;
         box-shadow: 0 6px 9px #0004;
-        border-radius: 24px;
-        padding: 32px;
+        border-radius: 32px;
+        padding: 16px;
         margin: 8px;
+
+        fieldset {
+            border-radius: 16px;
+        }
     }
 }
