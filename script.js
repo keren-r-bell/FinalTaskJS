@@ -1,9 +1,10 @@
-function myFunction(event) {
-    const rabbitPreview = document.getElementById('mainRabbit');
-
-    rabbitPreview.className = event.target.value;
+function setUpRadio() {
+    document.querySelectorAll('input[name="rabbitColor"]').forEach(radio => {
+        radio.addEventListener('change', radioUpdate);
+    });
 }
 
-document.querySelectorAll('input[name="rabbitColor"]').forEach(radio => {
-    radio.addEventListener('change', myFunction);
-});
+function radioUpdate(event) {
+    const rabbitPreview = document.getElementById('mainRabbit');
+    rabbitPreview.className = event.target.value;
+}
