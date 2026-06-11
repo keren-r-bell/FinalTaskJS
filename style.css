@@ -70,7 +70,7 @@ img.disabled {
 
     fieldset {
         border-radius: 16px;
-        border: 3px solid slateblue;
+        border: 3px solid #6569e1;
 
         legend {
             padding: 0 1cm;
@@ -78,35 +78,45 @@ img.disabled {
             font-weight: bold;
         }
     }
+}
 
-    button {
-        background-color: skyblue;
-        color: white;
-        font-size: 25px;
-        text-shadow: 0 2px 3px #0008;
-        border: 5px dotted dodgerblue;
-        border-radius: 64px;
-        padding: 3px 15px;
-        box-shadow: 0 5px 13px #0004;
-        cursor: pointer;
+button {
+    background-color: skyblue;
+    color: white;
+    font-size: 23px;
+    text-shadow: 0 2px 3px #0008;
+    border: 5px dotted dodgerblue;
+    border-radius: 64px;
+    padding: 3px 15px;
+    box-shadow: 0 5px 13px #0004;
+    cursor: pointer;
 
-        transition: 0.2s ease-out;
-        &:disabled {
-            cursor: default;
-            filter: saturate(0);
-            transform: scale(0.99);
-        }
-        &:enabled:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 16px #0003;
-        }
-        &:enabled:active {
-            transform: translateY(1px) scale(0.98);
-            box-shadow: 0 3px 8px #0008;
-        }
+    transition: 0.2s ease-out;
+    &:disabled {
+        cursor: default;
+        filter: saturate(0);
+        transform: scale(0.99);
+    }
+    &:enabled:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 16px #0003;
+    }
+    &:enabled:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0 3px 8px #0008;
     }
 }
 
-#results {
+#resultBox {
     position: fixed;
+    bottom: 10%;
+    width: 40%;
+    margin: 0 30%;
+    
+    padding: 32px;
+    text-align: start;
+    background: white;
+    border: 3px solid #6569e1;
+    border-radius: 32px;
+    box-shadow: 0 17px 38px #000A;
 }

@@ -13,10 +13,10 @@ function buildRabbit() {
 
     let results = document.getElementById('results');
 
-    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>, will be colored <strong style='text-shadow: 0 1px 4px #0008; color: " + color + "'>" + color + "</strong>";
+    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>,<br> will be colored <strong style='text-shadow: 0 1px 4px #0008; color: " + color + "'>" + color + "</strong>, <br>";
     
     if (accessories.length > 0) {
-        results.innerHTML += ", and will be bundled with the following extras: ";
+        results.innerHTML += "and will be bundled with the following extras: ";
         let accList = "";
         for (let i = 0; i < accessories.length; i++) {
             accList += accessories[i] 
@@ -27,8 +27,9 @@ function buildRabbit() {
         results.innerHTML += accList + ".";
 
     } else {
-        results.innerHTML += " and feature no extras.";
+        results.innerHTML += "and feature no extras.";
     }
+    setResultsHidden(false);
 }
 
 function setUp() {
@@ -80,4 +81,8 @@ function isButtonReady() {
     } else {
         readyButton.disabled = true;
     }
+}
+
+function setResultsHidden(truthness) {
+    document.getElementById('resultBox').hidden = truthness;
 }
