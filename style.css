@@ -38,7 +38,8 @@ main {
 }
 .disabledEffect {
     opacity: 35%;
-    transform: scale(0.92);
+    filter: saturate(0);
+    transform: scale(0.95);
 }
 
 #mainRabbit {
@@ -79,32 +80,27 @@ main {
             font-weight: bold;
         }
     }
-}
 
-button {
-    background-color: skyblue;
-    color: white;
-    font-size: 23px;
-    text-shadow: 0 2px 3px #0008;
-    border: 5px dotted dodgerblue;
-    border-radius: 64px;
-    padding: 3px 15px;
-    box-shadow: 0 5px 13px #0004;
-    cursor: pointer;
+    button {
+        background-color: skyblue;
+        color: white;
+        font-size: 23px;
+        text-shadow: 0 2px 3px #0008;
+        border: 5px dotted dodgerblue;
+        border-radius: 64px;
+        padding: 3px 15px;
+        box-shadow: 0 5px 13px #0004;
+        cursor: pointer;
 
-    transition: 0.2s ease-out;
-    &:disabled {
-        opacity: 50%;
-        filter: saturate(50%);
-        transform: scale(0.99);
-    }
-    &:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 8px 16px #0003;
-    }
-    &:enabled:active {
-        transform: translateY(1px) scale(0.98);
-        box-shadow: 0 3px 8px #0008;
+        transition: 0.2s ease-out;
+        &:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 16px #0003;
+        }
+        &:enabled:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 3px 8px #0008;
+        }
     }
 }
 
@@ -114,10 +110,31 @@ button {
     width: 40%;
     margin: 0 30%;
     
-    padding: 32px;
+    padding: 24px;
     text-align: start;
     background: white;
     border: 3px solid #6569e1;
     border-radius: 32px;
     box-shadow: 0 17px 38px #000A;
+
+    button {
+        background-color: lightcyan;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        border: 3px solid #6569e1;
+        border-radius: 8px;
+        padding: 2px 9px;
+        box-shadow: 0 3px 8px #0007;
+        cursor: pointer;
+
+        transition: 0.2s ease-out;
+        &:hover {
+            transform: translateY(-1px) scale(1.01);
+        }
+        &:enabled:active {
+            transform: translateY(2px) scale(0.97);
+            box-shadow: 0 2px 5px #0008;
+        }
+    }
 }
