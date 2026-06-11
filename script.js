@@ -1,5 +1,6 @@
 let color = "";
 let name = "";
+let isReady = false;
 
 function buildRabbit() {
     let accessories = [];
@@ -12,22 +13,27 @@ function buildRabbit() {
     }
 
     let results = document.getElementById('results');
-
-    results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>,<br> will be colored <strong style='text-shadow: 0 1px 4px #0008; color: " + color + "'>" + color + "</strong>, <br>";
-    
-    if (accessories.length > 0) {
-        results.innerHTML += "and will be bundled with the following extras: ";
-        let accList = "";
-        for (let i = 0; i < accessories.length; i++) {
-            accList += accessories[i] 
-            if (i < (accessories.length - 1)) {
-                accList += ", ";
+    if (isButtonReady() == true) {
+        results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>,<br> will be colored <strong style='text-shadow: 0 1px 4px #0008; color: " + color + "'>" + color + "</strong>, <br>";
+        
+        if (accessories.length > 0) {
+            results.innerHTML += "and will be bundled with the following extras: ";
+            let accList = "";
+            for (let i = 0; i < accessories.length; i++) {
+                accList += accessories[i] 
+                if (i < (accessories.length - 1)) {
+                    accList += ", ";
+                }
             }
-        }
-        results.innerHTML += accList + ".";
+            results.innerHTML += accList + ".";
 
+        } else {
+            results.innerHTML += "and feature no extras.";
+        }
+        const finalPrice = 28 + (3 * accessories.length)- 0.01
+        results.innerHTML += "<br>Total Price: <strong style='font-size: 21px'>" + finalPrice + "$</strong>"
     } else {
-        results.innerHTML += "and feature no extras.";
+        results.innerHTML = "<span style='color: red'>Please select a proper name and color!</span>";
     }
     setResultsHidden(false);
 }
@@ -68,18 +74,20 @@ function checkboxUpdate(event) {
     console.log(matchingAccessory)
     console.log(event.target.checked)
     if (event.target.checked == true) {
-        matchingAccessory.className = 'enabled'
+        matchingAccessory.className = ''
     } else {
-        matchingAccessory.className = 'disabled'
+        matchingAccessory.className = 'disabledEffect'
     }
 }
 
 function isButtonReady() {
     const readyButton = document.getElementById('submitButton');
     if (name.length > 0 && color.length > 0) {
-        readyButton.disabled = false;
+        readyButton.className = ''
+        return true
     } else {
-        readyButton.disabled = true;
+        readyButton.className = 'disabledEffect'
+        return false
     }
 }
 

@@ -36,10 +36,7 @@ main {
         transition: 0.4s ease-out;
     }
 }
-img.enabled {
-    opacity: 100%;
-}
-img.disabled {
+.disabledEffect {
     opacity: 35%;
     transform: scale(0.92);
 }
