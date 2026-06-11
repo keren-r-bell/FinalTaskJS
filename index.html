@@ -14,20 +14,21 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 
-<body onload="setUpRadio()">
+<body onload="setUp()">
     <header>
         <h1>Build-a-Hare</h1>
         <p>Design your dream rabbit friend! Choose a color, name and accessories!</p>
     </header>
     <main>
         <div id="outputRabbit">
-            <img src="images/rabbit.png" id="mainRabbit" alt="An illustration of your new pet rabbit.">
+            <p id="rabbitName"></p>
+            <img src="images/rabbit.png" id="mainRabbit" class="default" alt="An illustration of your new pet rabbit.">
             <div id="accessoryBox">
-                <img src="images/accessory1.png" class="disabled" alt="">
-                <img src="images/accessory2.png" class="disabled" alt="">
-                <img src="images/accessory3.png" class="disabled" alt="">
-                <img src="images/accessory4.png" class="disabled" alt="">
-                <img src="images/accessory5.png" class="disabled" alt="">
+                <img src="images/accessory1.png" class="disabled" alt="" id="topHatImg">
+                <img src="images/accessory2.png" class="disabled" alt="" id="cuteCapImg">
+                <img src="images/accessory3.png" class="disabled" alt="" id="bowTieImg">
+                <img src="images/accessory4.png" class="disabled" alt="" id="walkingCaneImg">
+                <img src="images/accessory5.png" class="disabled" alt="" id="handBagImg">
             </div>
         </div>
         <form id="settingsPane">
@@ -38,7 +39,7 @@
                 <br>
                 <label for="rabbitColor">* What's its color?</label>
                 <br>
-                <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" checked required>
+                <input type="radio" id="rabbitColorRed" name="rabbitColor" value="red" required>
                 <label for="rabbitColorRed">Red</label><br>
                 <input type="radio" id="rabbitColorBlue" name="rabbitColor" value="blue" required>
                 <label for="rabbitColorBlue">Blue</label><br>
@@ -64,7 +65,7 @@
                 <label for="handBag">Hand Bag</label><br>
             </fieldset>
             <br>
-            <button onclick="myFunc()">Build my Hare!</button>
+            <button onclick="buildRabbit()">Build my Hare!</button>
 
             <p id="results"></p>
         </form>

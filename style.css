@@ -21,12 +21,18 @@ main {
     align-items: center;
     justify-content: center;
 
+    #rabbitName {
+        color: linear-gradient(slateblue, black);
+        font-size: 21px;
+        font-weight: bold;
+    }
+
     #accessoryBox img {
         width: 94px;
     }
 }
 img.enabled {
-    opacity: 40%;
+    opacity: 100%;
 }
 img.disabled {
     opacity: 40%;
@@ -34,6 +40,9 @@ img.disabled {
 
 #mainRabbit {
     width: 300px; 
+}
+.default {
+    filter: saturate(0);
 }
 .blue {
     filter: hue-rotate(200deg); 
