@@ -54,18 +54,17 @@ function isFormReady() {
 }
 
 function buildRabbit() {
-    let accessories = [];
-    const checkboxes = document.getElementsByName('accessories')
-    for (let i=0; i < checkboxes.length; i++ ) {
-        if (checkboxes[i].checked) {
-            accessories[accessories.length] = checkboxes[i].value;
-        }
-    }
-
     let results = document.getElementById('results');
     if (isFormReady() == true) {
         results.innerHTML = "Your new rabbit, <strong>" + name + "</strong>,<br> will be colored <strong style='text-shadow: 0 1px 4px #0008; color: " + color + "'>" + color + "</strong>, <br>";
         
+        let accessories = [];
+        const checkboxes = document.getElementsByName('accessories')
+        for (let i=0; i < checkboxes.length; i++ ) {
+            if (checkboxes[i].checked) {
+                accessories[accessories.length] = checkboxes[i].value;
+            }
+        }
         if (accessories.length > 0) {
             results.innerHTML += "and will be bundled with the following extras: ";
             let accList = "";
